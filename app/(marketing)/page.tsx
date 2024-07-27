@@ -21,7 +21,7 @@ export default function Home() {
         <h1 className="text-xl lg:text-3xl font-creato text-neutral-400 max-w-[480px] text-center">
           Learn, practice, and master new languages with Verbi.
         </h1>
-        <div className=" flex flex-col gap-4 w-full">
+        <div className=" flex flex-col items-center gap-y-4 max-w-[330px] w-full">
           <ClerkLoading>
           <Loader2 className="h-5 w-5 text-muted-foreground animate-spin"/>
           </ClerkLoading>

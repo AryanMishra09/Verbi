@@ -1,3 +1,4 @@
+import { Spotlight } from "@/components/ui/spotlight";
 import { Footer } from "./footer";
 import { Header } from "./header";
 
@@ -7,8 +8,12 @@ type Props = {
 
 const MarketingLayout = ({children} : Props) => {
   return(
-    <div className="min-h-screen flex flex-col">
-      <div className="flex">
+    <div className="min-h-screen flex flex-col font-creato">
+      <Spotlight
+        className="-top-40 left-0 md:left-100 md:-top-20"
+        fill="white"
+      />
+      <div className="flex ">
         <Header />
       </div>
       <main className="flex-1 flex felx-col items-center justify-center">

@@ -2,24 +2,27 @@ import { Button } from "@/components/ui/button"
 import { ClerkLoaded, ClerkLoading, SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs"
 import { Loader2 } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export const Header = () => {
     return (
         <header className="fixed right-0 left-0 top-0 py-3 px-4 backdrop-blur-lg z-[100] flex items-center border-b-[1px] md:px-10 justify-between">
             <div className="max-w-screen mx-auto flex items-center justify-between h-full w-full">
-                <div className=" pl-4 flex items-center gap-x-3">
-                    <Image 
-                    src='/mascot.svg'
-                    alt="logo"
-                    width={30}
-                    height={30}
-                    />
-                    <h1
-                        className="text-3xl font-bold text-green-400 tracking-normal"
-                    >
-                        Verbi
-                    </h1>
-                </div>
+                <Link href={'/'}>
+                    <div className=" pl-4 flex items-center gap-x-3">
+                        <Image 
+                        src='/mascot.svg'
+                        alt="logo"
+                        width={30}
+                        height={30}
+                        />
+                        <h1
+                            className="text-3xl font-bold text-green-400 tracking-normal"
+                        >
+                            Verbi
+                        </h1>
+                    </div>
+                </Link>
                 <ClerkLoading>
                     <Loader2 className="h-5 w-5 text-muted-foreground animate-spin"/>
                 </ClerkLoading>

@@ -7,7 +7,7 @@ type Props = {
     disabled?: boolean,
     onCheck: () => void,
     status: "correct" | "wrong" | "none" | "completed",
-    lessonId?: boolean
+    lessonId?: number
 }
 
 export const Footer = ({
@@ -20,7 +20,7 @@ export const Footer = ({
     useKey("Enter", onCheck, {}, [onCheck]);
     return (
         <footer className={cn(
-            "lg:h-[140px] h-[100px] border-t-2 mt-10",
+            "lg:h-[140px] h-[100px] border-t-2 absolute bottom-0 w-full",
             status === "correct" && "bg-green-200",
             status === "wrong" &&  "bg-rose-200",
         )}>
@@ -48,10 +48,13 @@ export const Footer = ({
                         </div>
                 )}
                 {status === "completed" && (
-                    <div className="text-green-700 font-bold text-base lg:text-2xl flex items-center">
-                        <CheckCircle className="h-6 w-6 lg:h-10 lg:w-10 mr-4"/>
-                            Completed
-                    </div>
+                    <Button
+                        variant={'secondary'}
+                        size={isMobile ? 'sm' : 'lg'}
+                        onClick={() => window.location.href = `/lesson/${lessonId}`}
+                    >
+                        Practice Again
+                    </Button>
                 )}
                 <Button
                     disabled={disabled}

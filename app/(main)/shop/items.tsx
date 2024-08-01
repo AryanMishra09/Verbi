@@ -1,6 +1,7 @@
 'use client'
 
 import { refillHearts } from "@/actions/user-progress";
+import { createStripeURL } from "@/actions/user-subscription";
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { useTransition } from "react"
@@ -28,7 +29,22 @@ export const Items = ({
         startTransition(() => {
           refillHearts().catch(() => toast.error("Failed to refill hearts"));
         });
-      };
+    };
+
+    const onUpgrade = () => {
+        if (pending || hasActiveSubscription) return;
+    
+        startTransition(() => {
+          createStripeURL()
+            .then((res) => {
+              if (res.data) {
+                window.location.href = res.data;
+              }
+            })
+            .catch(() => toast.error("Failed to upgrade"));
+        });
+    };
+
     return ( 
         <ul className="w-full">
       <div className="flex items-center w-full p-4 gap-x-4 border-t-2">
@@ -78,7 +94,7 @@ export const Items = ({
         <Button 
             disabled={pending}
             className="px-6" 
-            // onClick={onUpgrade}
+            onClick={onUpgrade}
         >
           {hasActiveSubscription ? "Settings" : "Upgrade"}
         </Button>

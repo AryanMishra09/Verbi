@@ -1,3 +1,4 @@
+
 import { getLesson, getUserProgress } from "@/db/queries";
 import { redirect } from "next/navigation";
 import { Quiz } from "./quiz";
@@ -5,7 +6,7 @@ import { Quiz } from "./quiz";
 const LessonPage = async () => {
     const lessonData = getLesson();
     const userProgressData= getUserProgress();
-    
+    console.log("Testing")
     const [
         lesson,
         userProgress,
@@ -30,6 +31,9 @@ const LessonPage = async () => {
             initialHearts={userProgress.hearts}
             initialPercentage={initialPercentage}
             userSubscription={null}
+            titleHeading={lesson.title}
+            order={lesson.order}
+            unitId={lesson.unitId}
         />
     )
 }

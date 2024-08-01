@@ -8,7 +8,7 @@ import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 type Props = {
-    id: number;
+    lessonId: number;
     index: number;
     totalCount: number;
     locked?: boolean;
@@ -17,7 +17,7 @@ type Props = {
 }
 
 export const LessonButton = ({
-    id,
+    lessonId,
     index,
     totalCount,
     locked,
@@ -46,7 +46,7 @@ export const LessonButton = ({
     const isCompleted = !current && !locked;
 
     const Icon = isCompleted ? Check : isLast ? Crown : Star;
-    const href = isCompleted ? `/lesson/${id}` : '/lesson';
+    const href = isCompleted ? `/lesson/${lessonId}` : '/lesson';
 
     return (
         <Link 

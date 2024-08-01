@@ -32,16 +32,6 @@ export const Footer = ({
                     </div>
                 )}
                 {status === "wrong" && (
-                //     <Button
-                //         variant={'secondary'}
-                //         size={isMobile ? 'sm' : 'lg'}
-                //         onClick={() => window.location.href = `/lesson/${lessonId}`}
-                //     >
-                //         <div className="text-red-700 font-bold text-base lg:text-2xl flex items-center">
-                //             <XCircle className="h-6 w-6 lg:h-10 lg:w-10 mr-4"/>
-                //             Try Again
-                //         </div>
-                //     </Button>
                         <div className="text-red-700 font-bold text-base lg:text-2xl flex items-center">
                             <XCircle className="h-6 w-6 lg:h-10 lg:w-10 mr-4"/>
                             Try Again

@@ -4,6 +4,8 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "sonner";
 import { ExitModal } from "@/components/modals/exit-modal";
+import { HeartsModal } from "@/components/modals/hearts-modal copy";
+import { PracticeModal } from "@/components/modals/practice-modal.tsx";
 
 const font = DM_Sans({ subsets: ["latin"] });
 
@@ -23,7 +25,9 @@ export default function RootLayout({
       <html lang="en">
         <body className={font.className}>
           <Toaster />
+          <HeartsModal />
           <ExitModal />
+          <PracticeModal />
           {children}
         </body>
       </html>

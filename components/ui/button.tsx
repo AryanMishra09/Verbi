@@ -24,7 +24,7 @@ const buttonVariants = cva(
         success:
           "bg-green-500 text-destructive-foreground hover:bg-green-600",
         super:
-          "bg-indigo-500 text-destructive-foreground hover:bg-green-600",
+          "bg-indigo-600 text-destructive-foreground hover:bg-indigo-500",
         superOutline:
           "border  text-indigo-400 bg-background hover:bg-accent hover:text-indigo-400",
       },

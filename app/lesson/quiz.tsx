@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Header } from "./header";
 import { QuestionBubble } from "./question-bubble";
 import { Challenge } from "./challenge";
+import { Footer } from "./footer";
 
 type Props = {
     initialPercentage: number, 
@@ -31,7 +32,15 @@ export const Quiz = ({
     const [activeIndex, setActiveIndex] = useState(() => {
         const unCompletedChallenge = challenges.findIndex((challenge )=> !challenge.completed);
         return unCompletedChallenge === -1 ? 0 : unCompletedChallenge;
-    })
+    });
+
+    const [selectedOption, setSelectedOption] = useState<number>();
+    const [status, setStatus] = useState<"correct" | "wrong" | "none">("none")
+
+    const onSelect = (id: number) => {
+        if(status !== "none") return;
+        setSelectedOption(id);
+    }
 
     const challenge = challenges[activeIndex];
     const options = challenge?.challengeOptions || [];
@@ -47,7 +56,7 @@ export const Quiz = ({
                 hasactiveSubscription={!!userSubscription?.isActive}
             />
             <div className="flex-1">
-                <div className="h-screen flex items-center justify-center">
+                <div className="h-full flex items-center justify-center mt-20">
                     <div className="lg:min-h-[350px] lg:w-[600px] w-full px-6 lg:px-0 flex flex-col gap-y-12">
                         <h1 className="text-lg lg:text-3xl text-center lg:text-start text-white font-bold">
                             {title}
@@ -58,9 +67,9 @@ export const Quiz = ({
                             }
                             <Challenge
                                 options={options}
-                                onSelect={()=>{}}
-                                status={"none"}
-                                selectedOption={undefined}
+                                onSelect={onSelect}
+                                status={status}
+                                selectedOption={selectedOption}
                                 disabled={false}
                                 type={challenge.type}
                             />
@@ -68,6 +77,11 @@ export const Quiz = ({
                     </div>
                 </div>
             </div>
+            <Footer
+                disabled={!selectedOption}
+                status={status}
+                onCheck={()=>{}}
+            />
         </>
     )
 }

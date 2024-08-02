@@ -29,7 +29,7 @@ export const OpenModal = () => {
 
     return (
         <Dialog open={isOpen} onOpenChange={close}>
-            <DialogContent className="max-w-md text-white font-creato">
+            <DialogContent className="max-w-md  text-white font-creato">
                 <DialogHeader>
                     <div className="flex items-center w-full justify-center mb-5">
                         <Image 

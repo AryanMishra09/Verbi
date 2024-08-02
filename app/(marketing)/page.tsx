@@ -6,14 +6,19 @@ import { Loader2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
+import { useWindowSize } from "react-use";
 
 
 export default function Home() {
+  const {width, height} = useWindowSize();
   const {open} = useOpenModal();
   useEffect(()=>{
-    setTimeout(() => {
-      open();
-    }, 3000);
+    if(width > 700){
+      setTimeout(() => {
+        open();
+      }, 3000);
+    }
+    
   },[])
   return (
     <div

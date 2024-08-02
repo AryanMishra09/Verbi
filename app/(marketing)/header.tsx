@@ -21,6 +21,7 @@ export const Header = () => {
                         >
                             Verbi
                         </h1>
+                        <span className="text-muted-foreground text-xs"> - By Aryan Mishra❤️</span>
                     </div>
                 </Link>
                 <ClerkLoading>

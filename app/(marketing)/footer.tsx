@@ -5,7 +5,7 @@ export const Footer = () => {
     return (
         <footer
             // className="hidden lg:block h-20 w-full backdrop-blur-lg z-[100] border-t-[1px] border-neutral-500" 
-            className="py-2 px-4 backdrop-blur-lg z-[100] flex items-center justify-between lg:h-[100px] h-[80px] border-t-2 absolute bottom-0 w-full mx-auto"
+            className="hidden lg:block py-2 px-4 backdrop-blur-lg z-[100] items-center justify-between lg:h-[100px] h-[80px] border-t-2 absolute bottom-0 w-full mx-auto"
         >
             <div className="max-w-screen-lg mx-auto flex items-center justify-evenly h-full">
                 <Button size={'lg'} variant={'ghost'} className="w-full">

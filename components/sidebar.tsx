@@ -17,13 +17,14 @@ export const Sidebar = ({className} : Props) => {
                 className,
             )}
         >
-            <Link href={'/'}>
-                <div className="pl-4 pt-8 pb-7 flex items-center gap-x-3">
+            <Link href={'/'} className="pl-4 pt-8 pb-7 flex flex-col items-center justify-start gap-x-3">
+                <div className="flex">
                     <Image 
                         src='/mascot.svg'
                         alt="logo"
                         width={30}
                         height={30}
+                        className="mr-4"
                     />
                     <h1
                         className="text-3xl font-bold text-green-400 tracking-normal"
@@ -31,6 +32,7 @@ export const Sidebar = ({className} : Props) => {
                         Verbi
                     </h1>
                 </div>
+                <span className="text-muted-foreground text-xs mt-4"> - By Aryan Mishra❤️</span>
             </Link>
             <div className="flex flex-col gap-y-2 flex-1">
                 <SidebarItem 

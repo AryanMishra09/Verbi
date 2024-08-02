@@ -55,15 +55,18 @@ export const Sidebar = ({className} : Props) => {
                     href="/shop" 
                     iconSrc="/shop.svg"
                 />
+                <div className="p-4 h-fit w-fit flex flex-row items-center justify-center">
+                    <ClerkLoading>
+                        <Loader2 className="h-5 w-5 text-muted-foreground animate-spin"/>
+                    </ClerkLoading>
+                    <ClerkLoaded>
+                        <UserButton />
+                        <h1 className="ml-6 font-bold">Your Account</h1>
+                    </ClerkLoaded>
+                </div>
+                <span className="text-xs text-center relative bottom-4 left-4 text-muted-foreground">(Click on you profile)</span>
             </div>
-            <div className="p-4 h-fit w-fit">
-                <ClerkLoading>
-                    <Loader2 className="h-5 w-5 text-muted-foreground animate-spin"/>
-                </ClerkLoading>
-                <ClerkLoaded>
-                    <UserButton />
-                </ClerkLoaded>
-            </div>
+            
         </div>
     )
 }

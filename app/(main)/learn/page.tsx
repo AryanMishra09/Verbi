@@ -57,7 +57,13 @@ const LearnPage = async () => {
                 <Quests points={userProgress.points}/>
             </StickyWrapper>
             <FeedWrapper>
-                <Header title={userProgress.activeCourse.title}/>
+                <Header 
+                    title={userProgress.activeCourse.title}
+                    activeCourse={userProgress.activeCourse}
+                    hearts={userProgress.hearts}
+                    points={userProgress.points}
+                    hasActiveSubscription={isPro}
+                />
                 {units.map((unit) => (
                     <div key={unit.id} className="mb-10">
                         <Unit

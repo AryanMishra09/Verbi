@@ -13,12 +13,9 @@ export default function Home() {
   const {width, height} = useWindowSize();
   const {open} = useOpenModal();
   useEffect(()=>{
-    if(width > 700){
       setTimeout(() => {
         open();
       }, 3000);
-    }
-    
   },[])
   return (
     <div

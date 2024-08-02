@@ -28,7 +28,7 @@ export default function RootLayout({
           <Toaster />
           <HeartsModal />
           <ExitModal />
-          <OpenModal />
+          {/* <OpenModal /> */}
           <PracticeModal />
           {children}
         </body>

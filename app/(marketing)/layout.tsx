@@ -1,6 +1,7 @@
 import { Spotlight } from "@/components/ui/spotlight";
 import { Footer } from "./footer";
 import { Header } from "./header";
+import { OpenModal } from "@/components/modals/open-modal";
 
 type Props = {
   children : React.ReactNode;
@@ -9,6 +10,8 @@ type Props = {
 const MarketingLayout = ({children} : Props) => {
   return(
     <div className="min-h-screen flex flex-col font-creato">
+      
+      <OpenModal />
       <Spotlight
         className="-top-40 left-0 md:left-100 md:-top-20"
         fill="white"

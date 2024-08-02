@@ -32,7 +32,7 @@ export default function Home() {
         />
       </div>
       <div className="flex flex-col items-center gap-y-8">
-        <h1 className="text-xl lg:text-3xl font-creato text-neutral-400 max-w-[480px] text-center">
+        <h1 className="text-xl lg:text-3xl font-creato text-white max-w-[480px] text-center">
           Learn, practice, and master new languages with Verbi.
         </h1>
         <div className=" flex flex-col items-center gap-y-4 max-w-[330px] w-full">

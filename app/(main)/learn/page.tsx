@@ -1,3 +1,4 @@
+
 import { FeedWrapper } from "@/components/feedwrapper";
 import { StickyWrapper } from "@/components/stickywrapper";
 import { Header } from "./header";
@@ -10,27 +11,28 @@ import { Promo } from "@/components/promo";
 import { Quests } from "@/components/quests";
 
 const LearnPage = async () => {
+    
     const userProgressData = getUserProgress();
-  const unitsData = getUnits();
-  const courseProgressData = getCourseProgress();
-  const lessonPercentageData = getLessonPercentage();
-  const userSubscriptionData = getUserSubscription();
+    const unitsData = getUnits();
+    const courseProgressData = getCourseProgress();
+    const lessonPercentageData = getLessonPercentage();
+    const userSubscriptionData = getUserSubscription();
 
-  const [
-    userProgress,
-    units,
-    courseProgress,
-    lessonPercentage,
-    userSubscription,
-  ] = await Promise.all([
-    userProgressData,
-    unitsData,
-    courseProgressData,
-    lessonPercentageData,
-    userSubscriptionData,
-  ]);
+    const [
+        userProgress,
+        units,
+        courseProgress,
+        lessonPercentage,
+        userSubscription,
+    ] = await Promise.all([
+        userProgressData,
+        unitsData,
+        courseProgressData,
+        lessonPercentageData,
+        userSubscriptionData,
+    ]);
 
-  const isPro = !!userSubscription?.isActive;
+    const isPro = !!userSubscription?.isActive;
 
     if(!userProgress || !userProgress.activeCourse){
         redirect('/courses');   
@@ -38,6 +40,7 @@ const LearnPage = async () => {
     if(!courseProgress){
         redirect('courses');
     }
+    
 
     return (
         <div className="flex flex-row-reverse gap-[48px] px-6">

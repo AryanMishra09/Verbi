@@ -6,6 +6,7 @@ import { Toaster } from "sonner";
 import { ExitModal } from "@/components/modals/exit-modal";
 import { HeartsModal } from "@/components/modals/hearts-modal copy";
 import { PracticeModal } from "@/components/modals/practice-modal.tsx";
+import { OpenModal } from "@/components/modals/open-modal";
 
 const font = DM_Sans({ subsets: ["latin"] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
           <Toaster />
           <HeartsModal />
           <ExitModal />
+          <OpenModal />
           <PracticeModal />
           {children}
         </body>

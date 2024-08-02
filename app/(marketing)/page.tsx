@@ -1,11 +1,20 @@
+'use client'
 import { Button } from "@/components/ui/button";
+import { useOpenModal } from "@/store/use-open-modal";
 import { ClerkLoaded, ClerkLoading, SignedIn, SignedOut, SignInButton, SignUpButton } from "@clerk/nextjs";
 import { Loader2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
 
 
 export default function Home() {
+  const {open} = useOpenModal();
+  useEffect(()=>{
+    setTimeout(() => {
+      open();
+    }, 3000);
+  },[])
   return (
     <div
       className="max-w-[988px] mx-auto flex-1 w-full flex flex-col lg:flex-row items-center justify-center p-4 gap-4 md:gap-20"

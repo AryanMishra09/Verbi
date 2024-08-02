@@ -9,9 +9,12 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
+        locked: "bg-neutral-200 text-primary-foreground hover:bg-neutral-200/90 border-neutral-400 border-b-4 active:border-b-0",
         default: "bg-primary text-primary-foreground hover:bg-primary/90",
         destructive:
           "bg-rose-700 text-destructive-foreground hover:bg-rose-600",
+        destructiveOutline:
+          "border border-rose-500 bg-background hover:bg-accent hover:text-accent-foreground",
         outline:
           "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary:
@@ -21,7 +24,7 @@ const buttonVariants = cva(
         success:
           "bg-green-500 text-destructive-foreground hover:bg-green-600",
         super:
-          "bg-indigo-500 text-destructive-foreground hover:bg-green-600",
+          "bg-indigo-600 text-destructive-foreground hover:bg-indigo-500",
         superOutline:
           "border  text-indigo-400 bg-background hover:bg-accent hover:text-indigo-400",
       },
